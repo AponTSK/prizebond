@@ -1,3 +1,7 @@
+@php
+    $loginRegisterContent = getContent('login_register.content', true);
+@endphp
+
 @extends($activeTemplate . 'layouts.frontend')
 @section('content')
     <section class="account py-80">
@@ -9,17 +13,17 @@
                         <div class="account-content">
                             <div class="account-content__inner">
                                 <div class="login-link">
-                                    <a href="#">LOGIN</a>
+                                    <a href="#">@lang('LOGIN')</a>
                                 </div>
-                                <h4 class="account-content__title">Welcome Back!</h4>
-                                <p class="account-content__desc">Provide insights into team performance and engagement</p>
+                                <h4 class="account-content__title">{{ __(@$loginRegisterContent->data_values->login_heading) }}</h4>
+                                <p class="account-content__desc">{{ __(@$loginRegisterContent->data_values->login_register_subheading) }}</p>
                                 <div class="account-content__login">
                                     <a href="# " class="btn btn--login w-100">
-                                        <img src="assets/images/thumbs/google.svg" alt="svg"> Continue with Google
+                                        <img src="{{ frontendImage('login_register', @$loginRegisterContent->data_values->social_image) }}" alt="img"> {{ __(@$loginRegisterContent->data_values->social_text) }}
                                     </a>
                                 </div>
                                 <div class="account-form__content mb-4">
-                                    <div class="account-form__or">OR</div>
+                                    <div class="account-form__or">@lang('OR')</div>
                                 </div>
                             </div>
                             <div class="row">
@@ -57,11 +61,11 @@
                     </form>
                 </div>
                 <div class="account-right">
-                    <img src="assets/images/thumbs/account-right-bg.png" alt="" class="account-right__bg">
+                    <img src="{{ frontendImage('login_register', @$loginRegisterContent->data_values->right_bg_image) }}" alt="" class="account-right__bg">
                     <div class="account-right__content">
-                        <h4 class="account-right__title">Prize Bond Lottery</h4>
-                        <p class="account-right__desc fs-15">Play and Win money Unlimited</p>
-                        <img src="assets/images/thumbs/login-02.png" alt="img">
+                        <h4 class="account-right__title">{{ @$loginRegisterContent->data_values->Right_heading }}</h4>
+                        <p class="account-right__desc fs-15">{{ @$loginRegisterContent->data_values->Right_subheading }}</p>
+                        <img src="{{ frontendImage('login_register', @$loginRegisterContent->data_values->right_image) }}" alt="img">
                     </div>
                 </div>
             </div>

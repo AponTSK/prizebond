@@ -1,6 +1,6 @@
 @extends($activeTemplate . 'layouts.frontend')
 @section('content')
-    <div class="container">
+    <div class="container py-80">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-7 col-xl-5">
                 <div class="card ">
@@ -13,9 +13,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="form-label">@lang('Username')</label>
-                                        <input type="text" class="form-control form--control checkUser" name="username"
-                                            value="{{ old('username') }}">
+                                        <label class="form-label">@lang('User Name')</label>
+                                        <input type="text" class="form-control form--control checkUser" name="username" value="{{ old('username') }}">
                                         <span class="username-exists-error d-none"></span>
                                     </div>
                                 </div>
@@ -24,8 +23,7 @@
                                         <label class="form-label">@lang('Country')</label>
                                         <select name="country" class="form-control form--control select2" required>
                                             @foreach ($countries as $key => $country)
-                                                <option data-mobile_code="{{ $country->dial_code }}"
-                                                    value="{{ $country->country }}" data-code="{{ $key }}">
+                                                <option data-mobile_code="{{ $country->dial_code }}" value="{{ $country->country }}" data-code="{{ $key }}">
                                                     {{ __($country->country) }}
                                                 </option>
                                             @endforeach
@@ -41,31 +39,26 @@
                                             </span>
                                             <input type="hidden" name="mobile_code">
                                             <input type="hidden" name="country_code">
-                                            <input type="number" name="mobile" value="{{ old('mobile') }}"
-                                                class="form-control form--control checkUser" required>
+                                            <input type="number" name="mobile" value="{{ old('mobile') }}" class="form-control form--control checkUser" required>
                                         </div>
                                         <span class="mobile-exists-error d-none"></span>
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="form-label">@lang('Address')</label>
-                                    <input type="text" class="form-control form--control" name="address"
-                                        value="{{ old('address') }}">
+                                    <input type="text" class="form-control form--control" name="address" value="{{ old('address') }}">
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="form-label">@lang('State')</label>
-                                    <input type="text" class="form-control form--control" name="state"
-                                        value="{{ old('state') }}">
+                                    <input type="text" class="form-control form--control" name="state" value="{{ old('state') }}">
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="form-label">@lang('Zip Code')</label>
-                                    <input type="text" class="form-control form--control" name="zip"
-                                        value="{{ old('zip') }}">
+                                    <input type="text" class="form-control form--control" name="zip" value="{{ old('zip') }}">
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="form-label">@lang('City')</label>
-                                    <input type="text" class="form-control form--control" name="city"
-                                        value="{{ old('city') }}">
+                                    <input type="text" class="form-control form--control" name="city" value="{{ old('city') }}">
                                 </div>
                             </div>
                             <div class="form-group">

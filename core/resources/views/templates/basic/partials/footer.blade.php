@@ -55,7 +55,7 @@
                     <div class="footer-item">
                         <h5 class="footer-item__title">@lang('Follow Us')</h5>
                         <ul class="footer-menu footer-contact-icon">
-                            @foreach ($socialElements as $socialElement)
+                            @foreach ($socialElements->reverse() as $socialElement)
                                 <li class="footer-menu__item">
                                     <a href="{{ @$socialElement->data_values->url }}" class="footer-menu__link" target="_blank">
                                         @php

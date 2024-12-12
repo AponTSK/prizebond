@@ -21,7 +21,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-item">
                         <div class="blog-item__thumb">
-                            <a href="blog-details.html" class="blog-item__thumb-link">
+                            <a href="{{ route('blog.details', @$blogElement->slug) }}" class="blog-item__thumb-link">
                                 <img src="{{ frontendImage('blog', @$blogElement->data_values->image, '416x257') }}" class="fit-image" alt="" />
                             </a>
                         </div>

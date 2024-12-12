@@ -5,7 +5,7 @@
 <header class="header" id="header">
     <div class="container">
         <nav class="navbar navbar-expand-xl navbar-light">
-            <a class="navbar-brand logo" href="{{ route('home') }}"><img src="{{ sitelogo('dark') }}" alt="" /></a>
+            <a class="navbar-brand logo" href="{{ route('home') }}"><img src="{{ sitelogo() }}" alt="site-logo" /></a>
             <button class="navbar-toggler header-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span id="hiddenNav"><i class="las la-bars"></i></span>

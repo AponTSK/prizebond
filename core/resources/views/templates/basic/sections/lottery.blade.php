@@ -35,7 +35,7 @@
                             <table class="table table--responsive--lg">
                                 <thead>
                                     <tr>
-                                        <th>@lang('Username')</th>
+                                        <th>@lang('User Name')</th>
                                         <th>@lang('Amount')</th>
                                         <th>@lang('Quantity of Prize Bond')</th>
                                         <th>@lang('Status')</th>
@@ -70,12 +70,12 @@
                             <table class="table table--responsive--lg">
                                 <thead>
                                     <tr>
-                                        <th>{{ __(@$lotteryContent->data_values->mature_th_one) }}</th>
-                                        <th>{{ __(@$lotteryContent->data_values->mature_th_two) }}</th>
-                                        <th>{{ __(@$lotteryContent->data_values->mature_th_three) }}</th>
-                                        <th>{{ __(@$lotteryContent->data_values->mature_th_four) }}</th>
-                                        <th>{{ __(@$lotteryContent->data_values->mature_th_five) }}</th>
-                                        <th>{{ __(@$lotteryContent->data_values->mature_th_six) }}</th>
+                                        <th>@lang('Invoice No')</th>
+                                        <th>@lang('Customer')</th>
+                                        <th>@lang('Date')</th>
+                                        <th>@lang('Amount')</th>
+                                        <th>@lang('Status')</th>
+                                        <th>@lang('Action')</th>
                                     </tr>
                                 </thead>
                                 <tbody>

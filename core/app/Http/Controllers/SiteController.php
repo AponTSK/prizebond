@@ -134,10 +134,11 @@ class SiteController extends Controller
     public function blogDetails($slug)
     {
         $blog        = Frontend::where('slug', $slug)->where('data_keys', 'blog.element')->firstOrFail();
+        $latestBlog        = Frontend::whereNot('slug', $blog->slug)->where('data_keys', 'blog.element')->latest()->limit(5)->get();
         $pageTitle   = $blog->data_values->title;
         $seoContents = $blog->seo_content;
         $seoImage    = @$seoContents->image ? frontendImage('blog', $seoContents->image, getFileSize('seo'), true) : null;
-        return view('Template::blog_details', compact('blog', 'pageTitle', 'seoContents', 'seoImage'));
+        return view('Template::blog_details', compact('blog', 'pageTitle', 'seoContents', 'seoImage', 'latestBlog'));
     }
 
 

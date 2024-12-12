@@ -32,7 +32,7 @@
         "no_selection": false,
         "name": "Feature  Section",
         "description": "Showcase promotional banners with images, headings, and subheadings.",
-        "icon": "las la-question",
+        "icon": "las la-feather-alt",
         "content": {
             "heading": "text",
             "subheading": "text"
@@ -163,7 +163,7 @@
         "builder": true,
         "name": "Lottery Section",
         "description": "Describe your company background, mission, and team vision clearly.",
-        "icon": "lar la-chart-bar",
+        "icon": "las la-ticket-alt",
         "content": {
             "heading": "text",
             "subheading": "text",
@@ -171,17 +171,6 @@
             "button_one_url": "text",
             "button_two_name": "text",
             "button_two_url": "text",
-            "investor_th_one": "text",
-            "investor_th_two": "text",
-            "investor_th_three": "text",
-            "investor_th_four": "text",
-            "investor_th_five": "text",
-            "mature_th_one": "text",
-            "mature_th_two": "text",
-            "mature_th_three": "text",
-            "mature_th_four": "text",
-            "mature_th_five": "text",
-            "mature_th_six": "text",
             "mature_td_six_icon_one": "icon",
             "mature_td_six_icon_two": "icon"
         },
@@ -205,6 +194,32 @@
             "mature_td_four": "text",
             "mature_td_five": "text",
             "modal": true
+        }
+    },
+    "login_register": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Login & Register Section",
+        "description": "Showcase promotional banners with images, headings, and subheadings.",
+        "icon": "las la-sign-in-alt",
+        "content": {
+            "images": {
+                "right_bg_image": {
+                    "size": "544x697"
+                },
+                "right_image": {
+                    "size": "318x322"
+                },
+                "social_image": {
+                    "size": "48x48"
+                }
+            },
+            "login_heading": "text",
+            "register_heading": "text",
+            "login_register_subheading": "text",
+            "social_text": "text",
+            "Right_heading": "text",
+            "Right_subheading": "text"
         }
     },
     "service": {
@@ -380,6 +395,20 @@
             "modal": true
         }
     },
+    "breadcrumb": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Breadcrumb Section",
+        "description": "Connect and link your website seamlessly to all social media profiles.",
+        "icon": "las la-link",
+        "content": {
+            "images": {
+                "background_image": {
+                    "size": "1903x237"
+                }
+            }
+        }
+    },
     "contact_us": {
         "builder": true,
         "no_selection": true,
@@ -388,13 +417,15 @@
         "icon": "las la-phone",
         "content": {
             "title": "text",
-            "short_details": "text",
+            "map_url": "text",
             "email_address": "text",
             "contact_details": "text",
             "contact_number": "text",
-            "latitude": "text",
-            "longitude": "text",
-            "website_footer": "textarea-nic"
+            "images": {
+                "image": {
+                    "size": "636x866"
+                }
+            }
         }
     },
     "kyc": {
