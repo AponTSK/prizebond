@@ -6116,7 +6116,6 @@ span.notifi-count-btn {
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
 }
 
 .account-left {

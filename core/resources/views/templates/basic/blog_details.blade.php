@@ -78,6 +78,7 @@
         </div>
     </section>
 @endsection
+
 @push('fbComment')
     @php echo loadExtension('fb-comment') @endphp
 @endpush

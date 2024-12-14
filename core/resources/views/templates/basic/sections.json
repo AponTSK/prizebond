@@ -209,15 +209,11 @@
                 },
                 "right_image": {
                     "size": "318x322"
-                },
-                "social_image": {
-                    "size": "48x48"
                 }
             },
             "login_heading": "text",
             "register_heading": "text",
             "login_register_subheading": "text",
-            "social_text": "text",
             "Right_heading": "text",
             "Right_subheading": "text"
         }

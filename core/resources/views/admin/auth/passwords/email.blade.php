@@ -1,10 +1,8 @@
 @extends('admin.layouts.master')
 @section('content')
     <main class="account">
-        <span class="account__overlay bg-img dark-bg"
-            data-background-image="{{ asset('assets/admin/images/login-dark.png') }}"></span>
-        <span class="account__overlay bg-img light-bg"
-            data-background-image="{{ asset('assets/admin/images/login-bg.png') }}"></span>
+        <span class="account__overlay bg-img dark-bg" data-background-image="{{ asset('assets/admin/images/login-dark.png') }}"></span>
+        <span class="account__overlay bg-img light-bg" data-background-image="{{ asset('assets/admin/images/login-bg.png') }}"></span>
         <div class="account__card">
             <div class="account__logo">
                 <img class="light-show" src="{{ siteLogo() }}" alt="brand-thumb">

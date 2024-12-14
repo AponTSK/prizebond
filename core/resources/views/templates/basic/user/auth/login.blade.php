@@ -4,7 +4,7 @@
 
 @extends($activeTemplate . 'layouts.frontend')
 @section('content')
-    <section class="account py-80">
+    <section class="account py-60">
         <div class="container">
             <div class="account__inner">
                 <div class="account-left">
@@ -17,14 +17,7 @@
                                 </div>
                                 <h4 class="account-content__title">{{ __(@$loginRegisterContent->data_values->login_heading) }}</h4>
                                 <p class="account-content__desc">{{ __(@$loginRegisterContent->data_values->login_register_subheading) }}</p>
-                                <div class="account-content__login">
-                                    <a href="# " class="btn btn--login w-100">
-                                        <img src="{{ frontendImage('login_register', @$loginRegisterContent->data_values->social_image) }}" alt="img"> {{ __(@$loginRegisterContent->data_values->social_text) }}
-                                    </a>
-                                </div>
-                                <div class="account-form__content mb-4">
-                                    <div class="account-form__or">@lang('OR')</div>
-                                </div>
+                                @include(@$activeTemplate . 'partials.social_login')
                             </div>
                             <div class="row">
                                 <div class="form-group col-12">

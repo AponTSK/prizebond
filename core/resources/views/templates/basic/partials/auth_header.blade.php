@@ -1,65 +1,153 @@
-<nav class="navbar text-white bg-primary navbar-expand-lg bg-body-tertiary">
-    <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">
-            <h1 class="text-white">@lang('Logo')</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('user.home') }}">@lang('Dashboard')</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('user.deposit.history') }}">@lang('Deposit')</a>
-                </li>
+@php
+    use Illuminate\Support\Facades\Auth;
+    $user = Auth::user();
+@endphp
 
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('user.withdraw.history') }}">@lang('Withdraw')</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('ticket.index') }}">
-                        @lang('My Ticket')
-                    </a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('user.transactions') }}">
-                        @lang('Transactions')
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('user.profile.setting') }}">
-                        @lang('Profile Setting')
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('user.change.password') }}">
-                        @lang('Change Password')
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('user.twofactor') }}">@lang('2FA Security')</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('user.logout') }}">@lang('Logout')</a>
-                </li>
-            </ul>
-        </div>
-        @if (gs('multi_language'))
-            <div class="ml-auto">
-                @php
-                    $appLocal = strtoupper(config('app.locale')) ?? 'en';
-                @endphp
-                <select class=" form-control form--control form-select langSel">
-                    @foreach ($languages as $language)
-                        <option value="{{ $language->code }}" @selected($appLocal == strtoupper($language->code))>{{ $language->name }}
-                        </option>
-                    @endforeach
-                </select>
+<div class="dashboard-header">
+    <div class="dashboard-header__inner flex-between">
+        <div class="dashboard-header__left">
+            <div class="dashboard-body__bar d-lg-none d-block">
+                <span class="dashboard-body__bar-icon"><i class="fas fa-bars"></i></span>
             </div>
-        @endif
+
+            <h6 class="dashboard-header__grettings mb-0">{{ __($pageTitle) }}</h6>
+            <form action="*" method="get" class="search-form active d-none d-md-block">
+                <input type="text" name="search" class="form--control" placeholder="@lang('Search here...')" />
+                <button type="submit" class="search-form__btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <div class="d-block d-md-none">
+                <button type="button" class="header-search-btn">
+                    <i class="la la-search"></i>
+                </button>
+                <div class="header-search">
+                    <form action="*" method="get" class="search-form active">
+                        <input type="text" name="search" class="form--control" placeholder="@lang('Search here...')" />
+                        <button type="submit" class="search-form__btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-header__right flex-align">
+            <div class="notifi__inner">
+                <div class="dropdown">
+                    <button type="button" class="notify-btn" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-bell"></i>
+                        <span class="notifi-count-btn">10</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu--md dropdown-menu-right">
+                        <div class="notifi__inner-header">
+                            <span class="caption">@lang('Notification')</span>
+                            <p>You have 19 unread notification</p>
+                        </div>
+                        <div class="notifi__inner_body">
+                            <a href="#" class="dropdown-menu__item">
+                                <div class="navbar-notifi">
+                                    <div class="navbar-notifi__left">
+                                        <img src="{{ @$user->image_src }}" class="fit-image" alt="Profile Image" />
+                                    </div>
+                                    <div class="navbar-notifi__right">
+                                        <h6 class="notifi__title mb-0">
+                                            New support ticket has opened
+                                        </h6>
+                                        <span class="time"><i class="far fa-clock"></i> 1 day ago</span>
+                                    </div>
+                                </div>
+                                <!-- navbar-notifi end -->
+                            </a>
+                            <a href="#" class="dropdown-menu__item">
+                                <div class="navbar-notifi">
+                                    <div class="navbar-notifi__left">
+                                        <img src="{{ @$user->image_src }}" class="fit-image" alt="Profile Image" />
+                                    </div>
+                                    <div class="navbar-notifi__right">
+                                        <h6 class="notifi__title mb-0">
+                                            unexpected response from API
+                                        </h6>
+                                        <span class="time"><i class="far fa-clock"></i> 1 month ago</span>
+                                    </div>
+                                </div>
+                                <!-- navbar-notifi end -->
+                            </a>
+                            <a href="#" class="dropdown-menu__item">
+                                <div class="navbar-notifi">
+                                    <div class="navbar-notifi__left">
+                                        <img src="assets/images/thumbs/author-03.png" alt="Profile Image" />
+                                    </div>
+                                    <div class="navbar-notifi__right">
+                                        <h6 class="notifi__title mb-0">
+                                            unexpected response from API
+                                        </h6>
+                                        <span class="time"><i class="far fa-clock"></i> 1 month ago</span>
+                                    </div>
+                                </div>
+                                <!-- navbar-notifi end -->
+                            </a>
+                            <a href="#" class="dropdown-menu__item">
+                                <div class="navbar-notifi">
+                                    <div class="navbar-notifi__left">
+                                        <img src="assets/images/thumbs/author-04.png" alt="Profile Image" />
+                                    </div>
+                                    <div class="navbar-notifi__right">
+                                        <h6 class="notifi__title mb-0">
+                                            New member registered
+                                        </h6>
+                                        <span class="time"><i class="far fa-clock"></i> 1 month ago</span>
+                                    </div>
+                                </div>
+                                <!-- navbar-notifi end -->
+                            </a>
+                            <a href="#" class="dropdown-menu__item">
+                                <div class="navbar-notifi">
+                                    <div class="navbar-notifi__left">
+                                        <img src="assets/images/thumbs/author-05.png" alt="Profile Image" />
+                                    </div>
+                                    <div class="navbar-notifi__right">
+                                        <h6 class="notifi__title mb-0">
+                                            unexpected response from API
+                                        </h6>
+                                        <span class="time"><i class="far fa-clock"></i> 1 month ago</span>
+                                    </div>
+                                </div>
+                                <!-- navbar-notifi end -->
+                            </a>
+                        </div>
+                        <div class="notifi__inner__footer">
+                            <a href="https://localhost/visermart/admin/notifications" class="view-all-message">@lang('View All Notification')</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="user-info">
+                <div class="user-info__button flex-align">
+                    <span class="user-info__thumb">
+                        <img src="{{ @$user->image_src }}" class="fit-image" alt="image" />
+                    </span>
+                    <div class="user-info__name">
+                        <h6 class="title mb-0">{{ @$user->username }}</h6>
+                        <span class="setting"><span class="setting-text">@lang('Setting')</span>
+                            <i class="las la-angle-down"></i></span>
+                    </div>
+                </div>
+                <ul class="user-info-dropdown">
+                    <li class="user-info-dropdown__item">
+                        <a class="user-info-dropdown__link" href="#">
+                            <span class="icon"><i class="far fa-user-circle"></i></span>
+                            <span class="text">@lang('My Profile')</span>
+                        </a>
+                    </li>
+                    <li class="user-info-dropdown__item">
+                        <a class="user-info-dropdown__link" href="#">
+                            <span class="icon"><i class="fas fa-cog"></i></span>
+                            <span class="text">@lang('Settings')</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-</nav>
+</div>

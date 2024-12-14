@@ -21,8 +21,7 @@
                     @foreach ($menu as $parentMenu)
                         @if (@$parentMenu->submenu)
                             <li class="dashboard-nav__items has-dropdown">
-                                <a href="javascript:void(0)"
-                                    class="dashboard-nav__link {{ menuActive(@$parentMenu->menu_active ?? @$parentMenu->route_name) }}">
+                                <a href="javascript:void(0)" class="dashboard-nav__link {{ menuActive(@$parentMenu->menu_active ?? @$parentMenu->route_name) }}">
                                     <span class="dashboard-nav__link-icon">
                                         <i class="{{ $parentMenu->icon }}"></i>
                                     </span>
@@ -41,10 +40,8 @@
                             <ul class="dashboard-nav sidebar-submenu">
                                 @foreach ($parentMenu->submenu as $subMenu)
                                     <li class="dashboard-nav__items">
-                                        <a href="{{ route($subMenu->route_name) }}"
-                                            class="dashboard-nav__link {{ menuActive(@$subMenu->menu_active ?? @$subMenu->route_name) }}">
-                                            <span class="dashboard-nav__link-icon"><i
-                                                    class="las la-dot-circle"></i></span>
+                                        <a href="{{ route($subMenu->route_name) }}" class="dashboard-nav__link {{ menuActive(@$subMenu->menu_active ?? @$subMenu->route_name) }}">
+                                            <span class="dashboard-nav__link-icon"><i class="las la-dot-circle"></i></span>
                                             <span class="dashboard-nav__link-text"> {{ __($subMenu->title) }}
                                                 @php $counter = @$subMenu->counter; @endphp
                                                 @if (@$$counter)
@@ -60,8 +57,7 @@
                         </li>
                     @else
                         <li class="dashboard-nav__items">
-                            <a href="{{ route($parentMenu->route_name) }}"
-                                class="dashboard-nav__link {{ menuActive(@$parentMenu->menu_active ?? @$parentMenu->route_name) }}">
+                            <a href="{{ route($parentMenu->route_name) }}" class="dashboard-nav__link {{ menuActive(@$parentMenu->menu_active ?? @$parentMenu->route_name) }}">
                                 <span class="dashboard-nav__link-icon">
                                     <i class="{{ $parentMenu->icon }}"></i>
                                 </span>
