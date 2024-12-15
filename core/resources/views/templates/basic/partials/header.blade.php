@@ -45,9 +45,7 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{ route('home') }}">@lang('Home')</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">@lang('Results')</a>
-                    </li>
+
 
                     @foreach ($pages as $k => $data)
                         <li class="nav-item">

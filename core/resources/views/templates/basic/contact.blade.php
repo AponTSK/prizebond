@@ -4,8 +4,6 @@
 
 @extends($activeTemplate . 'layouts.frontend')
 @section('content')
-    @include('Template::partials.breadcrumb')
-
     <section class="contact-area py-80">
         <div class="container">
             <div class="row">
@@ -23,7 +21,7 @@
                                 {{ __(@$contactContent->data_values->title) }}
                             </h5>
                             <div class="map-area pb-0">
-                                <iframe class="map" src="{{ @$contactContent->data_values->map_url }}"></iframe>
+                                <iframe class="map" src="https://www.google.com/maps?q={{ @$contactContent->data_values->latitude }},{{ @$contactContent->data_values->longitude }}&hl=es&z=14&output=embed"></iframe>
                             </div>
                         </div>
 
@@ -37,10 +35,10 @@
                                         @lang('Email')
                                     </h6>
                                     <p class="contact__desc">
-                                        @lang('Lorem ipsum dolor sit amet.')
+                                        {{ __(@$contactContent->data_values->email_description) }}
                                     </p>
                                     <div class="contact__link">
-                                        <a href="#">{{ @$contactContent->data_values->email_address }}</a>
+                                        <a href="mailto:{{ @$contactContent->data_values->email_address }}">{{ @$contactContent->data_values->email_address }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -53,10 +51,10 @@
                                         @lang('Phone')
                                     </h6>
                                     <p class="contact__desc">
-                                        @lang('Lorem ipsum dolor sit amet.')
+                                        {{ __(@$contactContent->data_values->contact_number_description) }}
                                     </p>
                                     <div class="contact__link">
-                                        <a href="tel:+1(555)000-0000">{{ @$contactContent->data_values->contact_number }}</a>
+                                        <a href="tel:{{ @$contactContent->data_values->contact_number }}">{{ @$contactContent->data_values->contact_number }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +70,8 @@
                                         {{ __(@$contactContent->data_values->contact_details) }}
                                     </p>
                                     <div class="contact__link">
-                                        <a href="#">@lang('Get Directions')<i class="las la-angle-right"></i></a>
+                                        <a href="https://www.google.com/maps?q={{ @$contactContent->data_values->latitude }},{{ @$contactContent->data_values->longtitude }}" target="_blank">@lang('Get Directions')
+                                            <i class="las la-angle-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +79,7 @@
 
                         <div class="contact-form mt-4">
                             <div class="contact-form_content">
-                                <h5 class="contact-form__title">Fill Up To Contact</h5>
+                                <h5 class="contact-form__title">{{ __(@$contactContent->data_values->form_title) }}</h5>
                             </div>
                             <form class="verify-gcaptcha contact-form-box" action="{{ route('contact') }}" method="POST">
                                 @csrf

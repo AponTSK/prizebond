@@ -1,34 +1,32 @@
 @extends($activeTemplate . 'layouts.frontend')
 @section('content')
-    <section class="py-60">
-        <div class="container">
-            <div class="d-flex justify-content-center">
-                <div class="verification-code-wrapper">
-                    <div class="verification-area">
-                        <h5 class="pb-3 text-center border-bottom">@lang('Verify Email Address')</h5>
-                        <form action="{{ route('user.verify.email') }}" method="POST" class="submit-form">
-                            @csrf
-                            <p class="verification-text">@lang('A 6 digit verification code sent to your email address'): {{ showEmailAddress(auth()->user()->email) }}</p>
+    <div class="container py-80">
+        <div class="d-flex justify-content-center">
+            <div class="verification-code-wrapper">
+                <div class="verification-area">
+                    <h5 class="pb-3 text-center border-bottom">@lang('Verify Email Address')</h5>
+                    <form action="{{ route('user.verify.email') }}" method="POST" class="submit-form">
+                        @csrf
+                        <p class="verification-text">@lang('A 6 digit verification code sent to your email address'): {{ showEmailAddress(auth()->user()->email) }}</p>
 
-                            @include($activeTemplate . 'partials.verification_code')
+                        @include($activeTemplate . 'partials.verification_code')
 
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn--base w-100">@lang('Submit')</button>
-                            </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn--base w-100">@lang('Submit')</button>
+                        </div>
 
-                            <div class="mb-3">
-                                <p>
-                                    @lang('If you don\'t get any code'), <span class="countdown-wrapper">@lang('try again after') <span id="countdown" class="fw-bold">--</span> @lang('seconds')</span> <a
-                                        href="{{ route('user.send.verify.code', 'email') }}" class="try-again-link d-none"> @lang('Try again')</a>
-                                </p>
-                                <a href="{{ route('user.logout') }}">@lang('Logout')</a>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="mb-3">
+                            <p>
+                                @lang('If you don\'t get any code'), <span class="countdown-wrapper">@lang('try again after') <span id="countdown" class="fw-bold">--</span> @lang('seconds')</span> <a
+                                    href="{{ route('user.send.verify.code', 'email') }}" class="try-again-link d-none"> @lang('Try again')</a>
+                            </p>
+                            <a href="{{ route('user.logout') }}">@lang('Logout')</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 @endsection
 @push('script')
     <script>

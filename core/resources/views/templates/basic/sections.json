@@ -248,24 +248,6 @@
             "modal": false
         }
     },
-    "counter": {
-        "builder": true,
-        "name": "Counter Section",
-        "description": "Show important statistical data using visual counters and icons.",
-        "icon": "las la-calculator",
-        "content": {
-            "heading": "text",
-            "subheading": "text"
-        },
-        "element": {
-            "title": "text",
-            "counter_digit": "text",
-            "sub_title": "text",
-            "counter_icon": "icon",
-            "counter_icon_2": "icon",
-            "modal": false
-        }
-    },
     "policy_pages": {
         "builder": true,
         "no_selection": true,
@@ -413,10 +395,14 @@
         "icon": "las la-phone",
         "content": {
             "title": "text",
-            "map_url": "text",
+            "latitude": "text",
+            "longtitude": "text",
             "email_address": "text",
+            "email_description": "text",
             "contact_details": "text",
             "contact_number": "text",
+            "contact_number_description": "text",
+            "form_title": "text",
             "images": {
                 "image": {
                     "size": "636x866"

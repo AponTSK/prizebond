@@ -43,3 +43,12 @@
         </div>
     </div>
 </section>
+
+
+@push('style-lib')
+    <link rel="stylesheet" href="{{ asset($activeTemplateTrue . 'css/slick.css') }}">
+@endpush
+
+@push('script-lib')
+    <script src="{{ asset($activeTemplateTrue . 'js/slick.min.js') }}"></script>
+@endpush

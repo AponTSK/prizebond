@@ -123,44 +123,47 @@
     /*=============== custom dropdown select js end =================*/
 
     // ========================= Slick Slider Js Start ==============
-    $(".testimonial-slider").slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      speed: 1500,
-      dots: false,
-      pauseOnHover: true,
-      arrows: true,
-      prevArrow:
-        '<button type="button" class="slick-prev"><i class="las la-long-arrow-alt-left"></i></button>',
-      nextArrow:
-        '<button type="button" class="slick-next"><i class="las la-long-arrow-alt-right"></i></button>',
-      responsive: [
-        {
-          breakpoint: 1199,
-          settings: {
-            arrows: true,
-            slidesToShow: 2,
-            dots: false,
+    if ($(".testimonial-slider").length > 0) {
+      $(".testimonial-slider").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 1500,
+        dots: false,
+        pauseOnHover: true,
+        arrows: true,
+        prevArrow:
+          '<button type="button" class="slick-prev"><i class="las la-long-arrow-alt-left"></i></button>',
+        nextArrow:
+          '<button type="button" class="slick-next"><i class="las la-long-arrow-alt-right"></i></button>',
+        responsive: [
+          {
+            breakpoint: 1199,
+            settings: {
+              arrows: true,
+              slidesToShow: 2,
+              dots: false,
+            },
           },
-        },
-        {
-          breakpoint: 991,
-          settings: {
-            arrows: true,
-            slidesToShow: 2,
+          {
+            breakpoint: 991,
+            settings: {
+              arrows: true,
+              slidesToShow: 2,
+            },
           },
-        },
-        {
-          breakpoint: 767,
-          settings: {
-            arrows: false,
-            slidesToShow: 1,
+          {
+            breakpoint: 767,
+            settings: {
+              arrows: false,
+              slidesToShow: 1,
+            },
           },
-        },
-      ],
-    });
+        ],
+      });
+    }
+
     // ========================= Slick Slider Js End ===================
 
     // ================== Sidebar Menu Js Start ===============

@@ -7,7 +7,7 @@
                     <div class="text-end">
                         <a href="{{ route('home') }}" class="fw-bold home-link"> <i class="las la-long-arrow-alt-left"></i> @lang('Go to Home')</a>
                     </div>
-                    <div class="card ">
+                    <div class="card custom--card">
                         <div class="card-header">
                             <h5 class="card-title">@lang('Reset Password')</h5>
                         </div>

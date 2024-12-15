@@ -1,7 +1,5 @@
 @extends($activeTemplate . 'layouts.frontend')
 @section('content')
-    @include('Template::partials.breadcrumb')
-
     <section class="blog-detials py-120">
         <div class="container">
             <div class="row gy-5 justify-content-center">
@@ -65,7 +63,7 @@
                                         <a href="{{ route('blog.details', $item->slug) }}"> <img src="{{ frontendImage('blog', $item->data_values->image) }}" class="fit-image" alt=""></a>
                                     </div>
                                     <div class="latest-blog__content">
-                                        <h6 class="latest-blog__title"><a href="blog-details.html">{{ __(@$item->data_values->title) }}</a></h6>
+                                        <h6 class="latest-blog__title"><a href="{{ route('blog.details', $item->slug) }}">{{ __(@$item->data_values->title) }}</a></h6>
                                         <span class="latest-blog__date fs-13">{{ showDateTime($item->data_values->date) }}</span>
                                     </div>
                                 </div>

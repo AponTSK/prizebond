@@ -1,10 +1,10 @@
 <aside class="dashboard__sidebar  sidebar-menu">
     <div class="dashboard__sidebar-area">
         <div class="dashboard__sidebar-header">
-            <a href="{{ route('admin.dashboard') }}" class="dashboard__sidebar-logo">
-                <img class="img-fluid light-show" src="{{ siteLogo() }}">
-                <img class="img-fluid dark-show" src="{{ siteLogo('dark') }}">
-            </a>
+
+            <div class="sidebar__logo">
+                <a href="{{ route('admin.dashboard') }}" class="sidebar__main-logo"><img src="{{ siteLogo('dark') }}" alt="image"></a>
+            </div>
             <span class="sidebar-menu__close header-dropdown__icon">
                 <i class="las la-angle-double-left"></i>
             </span>

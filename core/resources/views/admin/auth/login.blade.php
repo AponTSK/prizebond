@@ -1,14 +1,11 @@
 @extends('admin.layouts.master')
 @section('content')
     <main class="account">
-        <span class="account__overlay bg-img dark-bg"
-            data-background-image="{{ asset('assets/admin/images/login-dark.png') }}"></span>
-        <span class="account__overlay bg-img light-bg"
-            data-background-image="{{ asset('assets/admin/images/login-bg.png') }}"></span>
+        <span class="account__overlay bg-img dark-bg" data-background-image="{{ asset('assets/admin/images/login-dark.png') }}"></span>
+        <span class="account__overlay bg-img light-bg" data-background-image="{{ asset('assets/admin/images/login-bg.png') }}"></span>
         <div class="account__card">
             <div class="account__logo">
-                <img src="{{ siteLogo() }}" class="light-show" alt="brand-thumb">
-                <img src="{{ siteLogo('dark') }}" class="dark-show" alt="brand-thumb">
+                <a class="sidebar__main-logo"><img src="{{ siteLogo('dark') }}" alt="image"></a>
             </div>
             <h2 class="account__title">@lang('Welcome Back') 👋</h2>
             <p class="account__desc">@lang('Please enter your credentials to proceed to the next step.')</p>

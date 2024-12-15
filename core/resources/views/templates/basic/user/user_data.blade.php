@@ -3,7 +3,7 @@
     <div class="container py-80">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-7 col-xl-5">
-                <div class="card ">
+                <div class="card custom--card">
                     <div class="card-header">
                         <h5 class="card-title">{{ __($pageTitle) }}</h5>
                     </div>

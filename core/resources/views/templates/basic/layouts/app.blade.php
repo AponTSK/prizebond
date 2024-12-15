@@ -16,7 +16,6 @@
 
     <link rel="stylesheet" href="{{ asset($activeTemplateTrue . 'css/custom.css') }}?v=1">
     <link rel="stylesheet" href="{{ asset($activeTemplateTrue . 'css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset($activeTemplateTrue . 'css/slick.css') }}">
 
 
     @stack('style')
@@ -56,7 +55,6 @@
     @endif
 
     <script src="{{ asset($activeTemplateTrue . 'js/main.js') }}"></script>
-    <script src="{{ asset($activeTemplateTrue . 'js/slick.min.js') }}"></script>
 
 
     @stack('script')
